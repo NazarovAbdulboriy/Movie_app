@@ -1,17 +1,28 @@
-import { useMutation, useQuery } from "@tanstack/react-query"
-import { api } from "../../../shared/api"
+import { useMutation, useQuery } from "@tanstack/react-query";
+import { api } from "../../../shared/api";
 
 export const useMovie = () => {
+  const getMovies = () =>
+    useQuery({
+      queryKey: ["movie-key"],
+      queryFn: () => api.get("/discover/movie").then((res) => res.data),
+    });
 
-    const getMovies = () => useQuery({
-        queryKey: ["movie-key"],
-        queryFn: ()=> api.get("/discover/movie").then(res => res.data)
-    })
+  const getMovieById = (id: number) =>
+    useQuery({
+      queryKey: ["movie-key", id],
+      queryFn: () => api.get(`/movie/${id}`).then((res) => res.data),
+    });
 
-    const createMovie = useMutation({
-        mutationFn: (data: any)=> api.post("/discover/movie", data)
-    })
+  const getMovieItems = (id: number, path: string) =>
+    useQuery({
+      queryKey: ["movie-key", id, path],
+      queryFn: () => api.get(`/movie/${id}/${path}`).then((res) => res.data),
+    });
 
+  const createMovie = useMutation({
+    mutationFn: (data: any) => api.post("/discover/movie", data),
+  });
 
-    return {getMovies, createMovie}
-}
+  return { getMovies, createMovie, getMovieById, getMovieItems };
+};
