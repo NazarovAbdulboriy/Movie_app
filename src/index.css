@@ -24,7 +24,7 @@ body{
   font-size: 18px;
   background: #444;
 
-  /* Center slide text vertically */
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -36,3 +36,39 @@ body{
   height: 100%;
   object-fit: cover;
 }
+
+
+.ant-pagination {
+  background-color: #000; 
+  padding: 10px;
+  border-radius: 8px;
+}
+
+
+.ant-pagination-item {
+  background-color: #000 !important; 
+  border: none !important;
+}
+
+.ant-pagination-item a {
+  color: #fff !important; 
+}
+
+
+.ant-pagination-item-active {
+  background-color: #fff !important;
+}
+
+.ant-pagination-item-active a {
+  color: #000 !important; 
+}
+
+
+.ant-pagination-prev button,
+.ant-pagination-next button {
+  color: #fff !important;
+  background-color: #000 !important;
+  border: none !important;
+}
+
+

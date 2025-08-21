@@ -25,7 +25,7 @@ const Header = () => {
           }
         >
           <img className="flex ml-[30%] text-white" src={poster} alt="" />
-          Афиша
+          Movies
         </NavLink>
         <NavLink
           to="/movies"
@@ -39,7 +39,7 @@ const Header = () => {
                   isActive ? "text-[#C61F1F] font-semibold" : "text-gray-700"
                 }`}
               >
-                Сеансы
+                Movies
               </span>
             </>
           )}
@@ -56,7 +56,7 @@ const Header = () => {
                   isActive ? "text-[#C61F1F] font-semibold" : "text-gray-700"
                 }`}
               >
-                Билеты
+                Bookmark
               </span>
             </>
           )}
@@ -73,7 +73,7 @@ const Header = () => {
                   isActive ? "text-[#C61F1F] font-semibold" : "text-gray-700"
                 }`}
               >
-                Поиск
+                search
               </span>
             </>
           )}

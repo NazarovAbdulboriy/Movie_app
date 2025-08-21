@@ -15,8 +15,6 @@ const MovieDetail = () => {
   );
   const { data: similarData } = getMovieItems(Number(id), "similar");
   const { data: creditsData } = getMovieItems(Number(id), "credits");
-
-  console.log(creditsData);
   const navigate = useNavigate()
 
   if (isLoading) {
@@ -111,12 +109,12 @@ const MovieDetail = () => {
               <img
                 onClick={()=> navigate(`/cast/${cast.id}`)}
                 loading="lazy"
-                className="w-[100px] pt-[10px] "
+                className="w-[100px] pt-[10px]"
                 src={image}
                 width={60}
                 alt=""
               />
-              <h3>{cast.name}</h3>
+              <h3 className="line-clamp-1 cursor-pointer mt-[10px]  ">{cast.name}</h3>
               <p className="text-gray-500 line-clamp-1 cursor-pointer">
                 {cast.character}
               </p>
